@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
+=======
+import React from "react";
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 import Logo from "../ui/Logo";
 import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
+<<<<<<< HEAD
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const navigate = useNavigate();
   const profileRef = useRef<HTMLDivElement>(null);
@@ -34,12 +39,20 @@ const Header: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+=======
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
+<<<<<<< HEAD
           <div
             onClick={() => navigate("/dashboard")}
             className="cursor-pointer"
@@ -51,6 +64,16 @@ const Header: React.FC = () => {
             {/* Notification */}
             <div className=" flex items-center space-x-4">
               <button className="cursor-pointer text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
+=======
+          <div onClick={() => navigate("/dashboard")}>
+            <Logo />
+          </div>
+
+          <div className="flex items-center space-x-6">
+            {/* Notification */}
+            <div className="flex items-center space-x-4">
+              <button className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -67,8 +90,13 @@ const Header: React.FC = () => {
               </button>
             </div>
             {/* Chat */}
+<<<<<<< HEAD
             <div className="hidden sm:flex items-center space-x-4">
               <button className="cursor-pointer text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
+=======
+            <div className="flex items-center space-x-4">
+              <button className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -85,6 +113,7 @@ const Header: React.FC = () => {
               </button>
             </div>
 
+<<<<<<< HEAD
             {/* HR Profile Accordion */}
             <div className="relative" ref={profileRef}>
               <button
@@ -114,6 +143,13 @@ const Header: React.FC = () => {
                   className={`w-4 h-4 transition-transform duration-200 ${
                     isProfileOpen ? "rotate-180" : ""
                   }`}
+=======
+            {/* Hr profile */}
+            <div className="flex items-center space-x-4">
+              <button className="text-gray-700 border border-gray-300 rounded-full p-2 hover:text-emerald-600 font-medium transition-colors duration-200">
+                <svg
+                  className="w-6 h-6"
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -122,6 +158,7 @@ const Header: React.FC = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
+<<<<<<< HEAD
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
@@ -227,6 +264,12 @@ const Header: React.FC = () => {
                   </div>
                 </div>
               )}
+=======
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </button>
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
             </div>
           </div>
 
@@ -286,4 +329,8 @@ const Header: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Header;
+=======
+export default Header;
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

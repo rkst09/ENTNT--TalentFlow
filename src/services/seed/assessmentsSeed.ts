@@ -16,7 +16,11 @@ export interface Question {
   };
   conditionalOn?: {
     questionId: string;
+<<<<<<< HEAD
     value: string | string[];
+=======
+    value: string;
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   };
 }
 
@@ -88,4 +92,8 @@ function generateAssessment(jobId: string): Assessment {
 
 // Generate assessments for first 3 jobs
 const jobIds = ['job-1', 'job-2', 'job-3'];
+<<<<<<< HEAD
 export const assessmentsSeed: Assessment[] = jobIds.map(jobId => generateAssessment(jobId));
+=======
+export const assessmentsSeed: Assessment[] = jobIds.map(jobId => generateAssessment(jobId));
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

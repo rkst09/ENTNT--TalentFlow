@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { FeatureItem, StatItem } from '../types';
 
 // Local Job interface for sample data
@@ -13,6 +14,9 @@ interface Job {
   postedDate: string;
   tags: string[];
 }
+=======
+import type { FeatureItem, StatItem, Job } from '../types';
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 
 // Navigation Links
 export const NAV_LINKS = [
@@ -50,9 +54,15 @@ export const FEATURES: FeatureItem[] = [
   },
   {
     id: '3',
+<<<<<<< HEAD
     title: 'Assessment Tools',
     description: 'Evaluate candidates with comprehensive assessments. Make data-driven hiring decisions.',
     icon: 'clipboard-check',
+=======
+    title: 'Chat With Applicants',
+    description: 'Communicate instantly with candidates. Move talent forward all in one place.',
+    icon: 'message-circle',
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   },
 ];
 
@@ -101,4 +111,8 @@ export const COMPANY_INFO = {
   name: 'TalentFlow',
   tagline: 'Transform Your Hiring Process With Smarter, Faster, Data-Driven Technology',
   description: 'From sourcing to onboarding, our platform streamlines every step. Hire confidently with tools built to reduce bias and boost efficiency.',
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

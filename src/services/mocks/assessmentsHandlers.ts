@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+<<<<<<< HEAD
 import { getAssessmentByJobId, saveAssessment, submitAssessmentResponse, getAllAssessments, deleteAssessment } from '../db/assessmentsDb';
 import { delay, maybeFail } from '../../utils/latency';
 
@@ -32,6 +33,14 @@ export const assessmentsHandlers = [
   http.get('/assessments/:jobId', async ({ params }) => {
     await delay();
     console.log('getAssessmentByJobId', params.jobId);
+=======
+import { getAssessmentByJobId, saveAssessment, submitAssessmentResponse } from '../db/assessmentsDb';
+import { delay, maybeFail } from '../../utils/latency';
+
+export const assessmentsHandlers = [
+  http.get('/assessments/:jobId', async ({ params }) => {
+    await delay();
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
     
     const assessment = await getAssessmentByJobId(params.jobId as string);
     return HttpResponse.json(assessment);
@@ -54,6 +63,7 @@ export const assessmentsHandlers = [
     const result = await submitAssessmentResponse(params.jobId as string, responses);
     return HttpResponse.json(result);
   }),
+<<<<<<< HEAD
 
   http.delete('/assessments/:id', async ({ params }) => {
     await delay();
@@ -62,3 +72,6 @@ export const assessmentsHandlers = [
     return new HttpResponse(null, { status: 204 });
   }),
 ];
+=======
+];
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

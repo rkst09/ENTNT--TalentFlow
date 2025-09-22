@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "files": [],
   "references": [
     {
@@ -15,3 +16,24 @@
     }
   }
 }
+=======
+
+
+
+  "files": [],
+
+
+  "references": [
+
+
+    { "path": "./tsconfig.app.json" },
+
+
+    { "path": "./tsconfig.node.json" }
+
+
+  ]
+
+
+}
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

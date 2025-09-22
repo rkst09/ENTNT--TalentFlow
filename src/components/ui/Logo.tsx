@@ -5,7 +5,17 @@ interface LogoProps {
   size?: "sm" | "md" | "lg";
 }
 
+<<<<<<< HEAD
 const Logo: React.FC<LogoProps> = ({ className = "" }) => {
+=======
+const Logo: React.FC<LogoProps> = ({ className = "", size = "md" }) => {
+  const sizeStyles = {
+    sm: "text-xl",
+    md: "text-2xl",
+    lg: "text-3xl",
+  };
+
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   return (
     <div className={`flex items-center ${className}`}>
       <div className="relative">
@@ -19,11 +29,19 @@ const Logo: React.FC<LogoProps> = ({ className = "" }) => {
           </svg>
         </div>
       </div>
+<<<<<<< HEAD
       <span className="font-bold text-gray-900 text-base sm:text-lg md:text-xl">
+=======
+      <span className={`font-bold text-gray-900 ${sizeStyles[size]}`}>
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
         TalentFlow
       </span>
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default Logo;
+=======
+export default Logo;
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

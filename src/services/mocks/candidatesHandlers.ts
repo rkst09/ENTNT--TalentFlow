@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+<<<<<<< HEAD
 import { 
   getAllCandidates, 
   updateCandidate, 
@@ -13,12 +14,19 @@ import { delay } from '../../utils/latency';
 
 export const candidatesHandlers = [
   // Existing candidate endpoints
+=======
+import { getAllCandidates, updateCandidate, getCandidateTimeline } from '../db/candidatesDb';
+import { delay, maybeFail } from '../../utils/latency';
+
+export const candidatesHandlers = [
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   http.get('/candidates', async ({ request }) => {
     await delay();
     
     const url = new URL(request.url);
     const search = url.searchParams.get('search') || '';
     const stage = url.searchParams.get('stage') || '';
+<<<<<<< HEAD
     const jobId = url.searchParams.get('jobId') || '';
     
     // For kanban board, we want all candidates without pagination
@@ -49,6 +57,22 @@ export const candidatesHandlers = [
     
     const candidate = await candidatesDb.candidates.get(params.id as string);
     return HttpResponse.json(candidate);
+=======
+    const page = parseInt(url.searchParams.get('page') || '1');
+    const pageSize = parseInt(url.searchParams.get('pageSize') || '50');
+    
+    const result = await getAllCandidates({ search, stage, page, pageSize });
+    return HttpResponse.json(result);
+  }),
+
+  http.patch('/candidates/:id', async ({ params, request }) => {
+    await delay();
+    maybeFail();
+    
+    const updates = await request.json() as any;
+    const updatedCandidate = await updateCandidate(params.id as string, updates);
+    return HttpResponse.json(updatedCandidate);
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   }),
 
   http.get('/candidates/:id/timeline', async ({ params }) => {
@@ -57,6 +81,7 @@ export const candidatesHandlers = [
     const timeline = await getCandidateTimeline(params.id as string);
     return HttpResponse.json(timeline);
   }),
+<<<<<<< HEAD
 
   http.patch('/candidates/:id', async ({ params, request }) => {
     await delay();
@@ -127,4 +152,6 @@ export const candidatesHandlers = [
     await deleteCandidate(params.id as string);
     return new HttpResponse(null, { status: 204 });
   }),
+=======
+>>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 ];
