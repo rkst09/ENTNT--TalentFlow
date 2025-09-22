@@ -69,3 +69,12 @@ dist-ssr
 
 
 *.sw?
+
+pnpm-debug.log*
+lerna-debug.log*
+
+.env
+
+node_modules
+dist
+dist-ssr
