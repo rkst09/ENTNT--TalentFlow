@@ -1,28 +1,41 @@
-// Mock implementations for assessment DB functions
+import Dexie, { type EntityTable } from 'dexie';
+import { type Assessment, assessmentsSeed } from '../seed/assessmentsSeed';
 
-export async function getAssessmentByJobId(jobId: string) {
-  // Return a mock assessment object
-  return {
-    jobId,
-    questions: [
-      { id: 'q1', text: 'What is your greatest strength?' },
-      { id: 'q2', text: 'Describe a challenge you overcame.' }
-    ],
-    createdAt: new Date().toISOString()
-  };
+class AssessmentsDB extends Dexie {
+  assessments!: EntityTable<Assessment, 'id'>;
+
+  constructor() {
+    super('AssessmentsDB');
+    this.version(1).stores({
+      assessments: '&id, jobId'
+    });
+  }
 }
 
-export async function saveAssessment(assessment: any) {
-  // Return the saved assessment (mock)
-  return { ...assessment, saved: true };
-}
+export const assessmentsDb = new AssessmentsDB();
 
-export async function submitAssessmentResponse(jobId: string, responses: any) {
-  // Return a mock result
-  return {
-    jobId,
+export const initializeAssessments = async () => {
+  const count = await assessmentsDb.assessments.count();
+  if (count === 0) {
+    await assessmentsDb.assessments.bulkAdd(assessmentsSeed);
+    console.log(`Seeded ${assessmentsSeed.length} assessments`);
+  }
+};
+
+export const getAssessmentByJobId = async (jobId: string) => {
+  return assessmentsDb.assessments.where('jobId').equals(jobId).first();
+};
+
+export const saveAssessment = async (assessment: Assessment) => {
+  await assessmentsDb.assessments.put(assessment);
+  return assessment;
+};
+
+export const submitAssessmentResponse = async (jobId: string, responses: Record<string, any>) => {
+  // Store responses in localStorage for this demo
+  localStorage.setItem(`assessment-response-${jobId}`, JSON.stringify({
     responses,
-    status: 'submitted',
-    submittedAt: new Date().toISOString()
-  };
-}
+    submittedAt: new Date()
+  }));
+  return { success: true };
+};
