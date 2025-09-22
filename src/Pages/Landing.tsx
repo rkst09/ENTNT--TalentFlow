@@ -3,7 +3,7 @@ import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Features from "../components/sections/Features";
 import JobExplore from "../components/sections/JobExplore";
-import Layout from "../components/layout/Layout";
+import Layout from "../components/Layout/Layout";
 
 const Landing: React.FC = () => {
   return (
