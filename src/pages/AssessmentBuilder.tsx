@@ -281,7 +281,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
           </h1>
           <button
             onClick={() => navigate("/dashboard/assessments")}
-            className="bg-emerald-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-emerald-700"
+            className="bg-[var(--color-primary)] cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-[var(--color-primary-700)]"
           >
             Back
           </button>
@@ -311,7 +311,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
             </button>
             <button
               onClick={saveAssessment}
-              className="px-4 py-2 cursor-pointer bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"
+              className="px-4 py-2 cursor-pointer bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-700)]"
             >
               <span className="md:text-sm text-xs">Save</span>
             </button>
@@ -327,7 +327,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
               onClick={() => setActiveTab("builder")}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === "builder"
-                  ? "border-emerald-500 text-emerald-600"
+                  ? "border-[var(--color-primary)] text-[var(--color-primary)]"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
@@ -337,7 +337,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
               onClick={() => setActiveTab("preview")}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === "preview"
-                  ? "border-emerald-500 text-emerald-600"
+                  ? "border-[var(--color-primary)] text-[var(--color-primary)]"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
@@ -358,7 +358,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                 </h2>
                 <button
                   onClick={addSection}
-                  className="bg-emerald-600 cursor-pointer text-white px-3 py-1 rounded text-sm hover:bg-emerald-700"
+                  className="bg-[var(--color-primary)] cursor-pointer text-white px-3 py-1 rounded text-sm hover:bg-[var(--color-primary-700)]"
                 >
                   <span className="md:text-sm text-xs">Add Section</span>
                 </button>
@@ -370,7 +370,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                     key={section.id}
                     className={`p-4 border rounded-lg cursor-pointer transition-colors ${
                       selectedSection === section.id
-                        ? "border-emerald-500 bg-emerald-50"
+                        ? "border-[var(--color-primary)] bg-[var(--color-primary-100)]"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                     onClick={() => setSelectedSection(section.id)}
@@ -457,7 +457,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                         key={question.id}
                         className={`p-4 border rounded-lg cursor-pointer transition-colors ${
                           selectedQuestion === question.id
-                            ? "border-emerald-500 bg-emerald-50"
+                            ? "border-[var(--color-primary)] bg-[var(--color-primary-100)]"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
                         onClick={() => setSelectedQuestion(question.id)}
@@ -574,7 +574,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                                       { options: newOptions }
                                     );
                                   }}
-                                  className="text-emerald-600 hover:text-emerald-700 text-sm"
+                                  className="text-[var(--color-primary)] hover:text-[var(--color-primary-700)] text-sm"
                                 >
                                   + Add Option
                                 </button>
@@ -755,7 +755,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                                         }
                                       }
                                     }}
-                                    className="text-emerald-600 hover:text-emerald-700 text-sm"
+                                    className="text-[var(--color-primary)] hover:text-[var(--color-primary-700)] text-sm"
                                   >
                                     Add Condition
                                   </button>
@@ -1002,7 +1002,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                                   e.target.value
                                 )
                               }
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)]"
                               placeholder="Enter your answer..."
                             />
                           )}
@@ -1017,7 +1017,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                                 )
                               }
                               rows={4}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)]"
                               placeholder="Enter your answer..."
                             />
                           )}
@@ -1034,7 +1034,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                               }
                               min={question.validation?.min}
                               max={question.validation?.max}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)]"
                               placeholder="Enter a number..."
                             />
                           )}
@@ -1096,7 +1096,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = () => {
                     );
                     toast.success("Responses saved locally!");
                   }}
-                  className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"
+                  className="px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-700)]"
                 >
                   Save
                 </button>

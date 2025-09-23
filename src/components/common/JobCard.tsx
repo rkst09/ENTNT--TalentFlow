@@ -1,5 +1,4 @@
 import React from "react";
-<<<<<<< HEAD
 import type { Job } from "../../services/seed/jobsSeed";
 import Card from "../ui/Card";
 import { useNavigate } from "react-router-dom";
@@ -13,9 +12,9 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
   const getTypeColor = (type: string) => {
     switch (type) {
       case "Full-time":
-        return "bg-emerald-100 text-emerald-800";
+  return "bg-[var(--color-primary-100)] text-[var(--color-primary-800)]";
       case "Remote":
-        return "bg-blue-100 text-blue-800";
+          return "bg-[var(--color-primary-100)] text-[var(--color-primary-800)]";
       case "Part-time":
         return "bg-yellow-100 text-yellow-800";
       case "Contract":
@@ -42,10 +41,10 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
   };
 
   return (
-    <Card className="hover:shadow-lg transition-all duration-300 border hover:border-emerald-200 cursor-pointer group">
+  <Card className="hover:shadow-lg transition-all duration-300 border hover:border-[var(--color-primary-100)] cursor-pointer group">
       <div onClick={handleJobCardClick} className="flex items-start space-x-4">
         {/* Job Type Avatar */}
-        <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
+  <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary-100)] to-[var(--color-primary)] rounded-lg flex items-center justify-center flex-shrink-0">
           <span className="text-white font-semibold text-lg">
             {job.jobType?.charAt(0) || "J"}
           </span>
@@ -55,7 +54,7 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
         <div className="flex-grow min-w-0">
           <div className="flex items-start justify-between mb-2">
             <div>
-              <h3 className="font-semibold text-gray-900 md:text-lg sm:text-base text-sm group-hover:text-emerald-600 transition-colors">
+              <h3 className="font-semibold text-gray-900 md:text-lg sm:text-base text-sm group-hover:text-[var(--color-primary-600)] transition-colors">
                 {job.title}
               </h3>
               <p className="text-gray-600 md:text-sm text-xs">
@@ -120,19 +119,3 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 };
 
 export default JobCard;
-=======
-import type { Job } from "../../types";
-import type { Job } from "../../services/seed/jobsSeed";
-import Card from "../ui/Card";
-
-interface JobCardProps {
-@@ -60,7 +60,7 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
-<div className="text-right">
-<p className="font-semibold text-gray-900">{job.salary}</p>
-<p className="text-gray-500 text-xs">
-                {formatDate(job.postedDate)}
-                {formatDate(job.createdAt.toString())}
-</p>
-</div>
-</div>
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

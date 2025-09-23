@@ -7,18 +7,13 @@ class CandidatesDB extends Dexie {
   constructor() {
     super('CandidatesDB');
     this.version(1).stores({
-<<<<<<< HEAD
       candidates: '&id, email, stage, jobId, name, appliedAt, updatedAt'
-=======
-      candidates: '&id, email, stage, jobId, name'
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
     });
   }
 }
 
 export const candidatesDb = new CandidatesDB();
 
-<<<<<<< HEAD
 // Add debugging functions to window object in development
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
   (window as any).clearCandidatesDB = async () => {
@@ -59,13 +54,6 @@ export const initializeCandidates = async () => {
   } catch (error) {
     // console.error('Error initializing candidates:', error);
     throw error;
-=======
-export const initializeCandidates = async () => {
-  const count = await candidatesDb.candidates.count();
-  if (count === 0) {
-    await candidatesDb.candidates.bulkAdd(candidatesSeed);
-    console.log(`Seeded ${candidatesSeed.length} candidates`);
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   }
 };
 
@@ -74,7 +62,6 @@ export const getAllCandidates = async (params?: {
   stage?: string;
   page?: number;
   pageSize?: number;
-<<<<<<< HEAD
   jobId?: string;
 }) => {
   try {
@@ -114,36 +101,6 @@ export const getAllCandidates = async (params?: {
     // Return empty result instead of throwing
     return { data: [], total: 0 };
   }
-=======
-}) => {
-  let query = candidatesDb.candidates.orderBy('appliedAt').reverse();
-  
-  if (params?.stage) {
-    query = query.filter(candidate => candidate.stage === params.stage);
-  }
-  
-  if (params?.search) {
-    query = query.filter(candidate => 
-      candidate.name.toLowerCase().includes(params.search!.toLowerCase()) ||
-      candidate.email.toLowerCase().includes(params.search!.toLowerCase())
-    );
-  }
-
-  const candidates = await query.toArray();
-  
-  if (params?.page && params?.pageSize) {
-    const start = (params.page - 1) * params.pageSize;
-    const end = start + params.pageSize;
-    return {
-      data: candidates.slice(start, end),
-      total: candidates.length,
-      page: params.page,
-      pageSize: params.pageSize
-    };
-  }
-  
-  return { data: candidates, total: candidates.length };
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 };
 
 export const updateCandidate = async (id: string, updates: Partial<Candidate>) => {
@@ -160,7 +117,6 @@ export const getCandidateTimeline = async (id: string) => {
     { stage: 'applied', date: candidate.appliedAt, note: 'Application submitted' },
     { stage: candidate.stage, date: candidate.updatedAt, note: `Moved to ${candidate.stage}` }
   ];
-<<<<<<< HEAD
 };
 
 // Dashboard statistics functions
@@ -244,6 +200,4 @@ export const getApplicationStatistics = async () => {
   
   // console.log('getApplicationStatistics: Stats:', stats);
   return stats;
-=======
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 };

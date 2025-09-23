@@ -15,7 +15,6 @@ class AssessmentsDB extends Dexie {
 export const assessmentsDb = new AssessmentsDB();
 
 export const initializeAssessments = async () => {
-<<<<<<< HEAD
   try {
     const assessmentsCount = await assessmentsDb.assessments.count();
     if(assessmentsCount > 0) {
@@ -29,12 +28,6 @@ export const initializeAssessments = async () => {
   } catch (error) {
     console.error("Error initializing assessments:", error);
     // throw error;
-=======
-  const count = await assessmentsDb.assessments.count();
-  if (count === 0) {
-    await assessmentsDb.assessments.bulkAdd(assessmentsSeed);
-    console.log(`Seeded ${assessmentsSeed.length} assessments`);
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   }
 };
 
@@ -42,7 +35,6 @@ export const getAssessmentByJobId = async (jobId: string) => {
   return assessmentsDb.assessments.where('jobId').equals(jobId).first();
 };
 
-<<<<<<< HEAD
 export const getAllAssessments = async () => {
   const assessments = await assessmentsDb.assessments.toArray();
   // console.log("getAllAssessments - Retrieved from database:", assessments);
@@ -57,10 +49,6 @@ export const saveAssessment = async (assessment: Assessment) => {
   // const saved = await assessmentsDb.assessments.get(assessment.id);
   // console.log("Verification - Assessment saved:", saved);
   
-=======
-export const saveAssessment = async (assessment: Assessment) => {
-  await assessmentsDb.assessments.put(assessment);
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   return assessment;
 };
 
@@ -71,7 +59,6 @@ export const submitAssessmentResponse = async (jobId: string, responses: Record<
     submittedAt: new Date()
   }));
   return { success: true };
-<<<<<<< HEAD
 };
 
 // Dashboard statistics functions
@@ -97,6 +84,4 @@ export const getAssessmentStatistics = async () => {
 export const deleteAssessment = async (id: string) => {
   await assessmentsDb.assessments.delete(id);
   return true;
-=======
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 };

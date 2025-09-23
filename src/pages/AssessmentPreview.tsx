@@ -194,7 +194,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
           </h1>
           <button
             onClick={() => navigate("/jobs")}
-            className="bg-emerald-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-emerald-700"
+            className="bg-[var(--color-primary)] cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-[var(--color-primary-700)]"
           >
             Back
           </button>
@@ -231,7 +231,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
           </p>
           <button
             onClick={() => navigate("/jobs")}
-            className="bg-emerald-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-emerald-700"
+            className="bg-[var(--color-primary)] cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-[var(--color-primary-700)]"
           >
             Back
           </button>
@@ -251,7 +251,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
               </h1>
               <button
                 onClick={() => navigate("/dashboard/assessments")}
-                className="px-4 sm:py-2 py-1 text-gray-900 border cursor-pointer  border-gray-300 rounded-lg hover:bg-gray-50 hover:text-emerald-500 "
+                className="px-4 sm:py-2 py-1 text-gray-900 border cursor-pointer  border-gray-300 rounded-lg hover:bg-gray-50 hover:text-[var(--color-primary)] "
               >
                 Back
               </button>
@@ -353,7 +353,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
                           onChange={(e) =>
                             handleResponseChange(question.id, e.target.value)
                           }
-                          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
+                          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)] ${
                             errors[question.id]
                               ? "border-red-500"
                               : "border-gray-300"
@@ -369,7 +369,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
                             handleResponseChange(question.id, e.target.value)
                           }
                           rows={4}
-                          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
+                          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)] ${
                             errors[question.id]
                               ? "border-red-500"
                               : "border-gray-300"
@@ -387,7 +387,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
                           }
                           min={question.validation?.min}
                           max={question.validation?.max}
-                          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 ${
+                          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)] ${
                             errors[question.id]
                               ? "border-red-500"
                               : "border-gray-300"
@@ -430,7 +430,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
                           />
                           <label
                             htmlFor={`file-${question.id}`}
-                            className="mt-2 inline-block px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 cursor-pointer"
+                            className="mt-2 inline-block px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-700)] cursor-pointer"
                           >
                             Choose File
                           </label>
@@ -482,7 +482,7 @@ const AssessmentPreview: React.FC<AssessmentPreviewProps> = () => {
             </button>
             <button
               onClick={handleSubmit}
-              className="px-4 py-2 w-full cursor-pointer bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"
+              className="px-4 py-2 w-full cursor-pointer bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-700)]"
             >
               Submit
             </button>

@@ -74,7 +74,7 @@ const JobDetails: React.FC = () => {
             </p>
             <Button
               variant="default"
-              className="bg-emerald-600 hover:bg-emerald-700 text-white"
+              className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-700)] text-white"
               onClick={() => navigate("/jobs")}
             >
               Browse All Jobs
@@ -94,7 +94,7 @@ const JobDetails: React.FC = () => {
             <Button
               variant="outline"
               onClick={() => navigate("/jobs")}
-              className="flex items-center space-x-2 hover:bg-gray-100 hover:text-emerald-600"
+              className="flex items-center space-x-2 hover:bg-gray-100 hover:text-[var(--color-primary)]"
             >
               <svg
                 className="w-4 h-4"
@@ -181,7 +181,7 @@ const JobDetails: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-sm font-medium rounded-full">
+                  <span className="px-3 py-1 bg-[var(--color-primary-100)] text-[var(--color-primary-800)] text-sm font-medium rounded-full">
                     {job.jobType || "Job"}
                   </span>
                   {job.tags.map((tag) => (
@@ -199,7 +199,7 @@ const JobDetails: React.FC = () => {
                   variant="default"
                   size="lg"
                   onClick={handleApply}
-                  className="w-full bg-emerald-600 hover:bg-emerald-700"
+                  className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-700)]"
                 >
                   Apply Now
                 </Button>
@@ -237,7 +237,7 @@ const JobDetails: React.FC = () => {
                 <Button
                   variant="default"
                   onClick={handleApply}
-                  className="bg-emerald-600 hover:bg-emerald-700"
+                  className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-700)]"
                 >
                   Submit Application
                 </Button>

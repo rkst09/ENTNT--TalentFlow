@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
-=======
-import React from "react";
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 import Logo from "../ui/Logo";
 import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
-<<<<<<< HEAD
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const navigate = useNavigate();
   const profileRef = useRef<HTMLDivElement>(null);
@@ -39,20 +34,12 @@ const Header: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-=======
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-<<<<<<< HEAD
           <div
             onClick={() => navigate("/dashboard")}
             className="cursor-pointer"
@@ -63,17 +50,7 @@ const Header: React.FC = () => {
           <div className="flex items-center sp md:space-x-6">
             {/* Notification */}
             <div className=" flex items-center space-x-4">
-              <button className="cursor-pointer text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
-=======
-          <div onClick={() => navigate("/dashboard")}>
-            <Logo />
-          </div>
-
-          <div className="flex items-center space-x-6">
-            {/* Notification */}
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
+              <button className="cursor-pointer text-gray-700 hover:text-[var(--color-primary)] font-medium transition-colors duration-200">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -90,13 +67,8 @@ const Header: React.FC = () => {
               </button>
             </div>
             {/* Chat */}
-<<<<<<< HEAD
             <div className="hidden sm:flex items-center space-x-4">
-              <button className="cursor-pointer text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
-=======
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-emerald-600 font-medium transition-colors duration-200">
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
+              <button className="cursor-pointer text-gray-700 hover:text-[var(--color-primary)] font-medium transition-colors duration-200">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -113,16 +85,15 @@ const Header: React.FC = () => {
               </button>
             </div>
 
-<<<<<<< HEAD
             {/* HR Profile Accordion */}
             <div className="relative" ref={profileRef}>
               <button
                 onClick={toggleProfile}
-                className="cursor-pointer flex items-center space-x-3 text-gray-700 hover:text-emerald-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                className="cursor-pointer flex items-center space-x-3 text-gray-700 hover:text-[var(--color-primary)] transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
               >
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-[var(--color-primary-100)] rounded-full flex items-center justify-center">
                   <svg
-                    className="w-5 h-5 text-emerald-600"
+                    className="w-5 h-5 text-[var(--color-primary)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -143,13 +114,6 @@ const Header: React.FC = () => {
                   className={`w-4 h-4 transition-transform duration-200 ${
                     isProfileOpen ? "rotate-180" : ""
                   }`}
-=======
-            {/* Hr profile */}
-            <div className="flex items-center space-x-4">
-              <button className="text-gray-700 border border-gray-300 rounded-full p-2 hover:text-emerald-600 font-medium transition-colors duration-200">
-                <svg
-                  className="w-6 h-6"
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -158,7 +122,6 @@ const Header: React.FC = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-<<<<<<< HEAD
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
@@ -170,9 +133,9 @@ const Header: React.FC = () => {
                   {/* User Info Section */}
                   <div className="px-4 py-3 border-b border-gray-100">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <div className="w-10 h-10 bg-[var(--color-primary-100)] rounded-full flex items-center justify-center">
                         <svg
-                          className="w-6 h-6 text-emerald-600"
+                          className="w-6 h-6 text-[var(--color-primary)]"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -190,7 +153,7 @@ const Header: React.FC = () => {
                           HR Manager
                         </p>
                         <p className="text-xs text-gray-500">hr@company.com</p>
-                        <p className="text-xs text-emerald-600 font-medium">
+                        <p className="text-xs text-[var(--color-primary)] font-medium">
                           HR Administrator
                         </p>
                       </div>
@@ -264,18 +227,12 @@ const Header: React.FC = () => {
                   </div>
                 </div>
               )}
-=======
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </button>
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
             </div>
           </div>
 
           {/* Mobile menu button */}
           {/* <button
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-emerald-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-[var(--color-primary)] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)]"
             onClick={toggleMenu}
           >
             <svg
@@ -313,8 +270,8 @@ const Header: React.FC = () => {
                   to={link.href}
                   className={`font-medium transition-colors duration-200 px-2 py-1 ${
                     location.pathname === link.href
-                      ? "text-emerald-600"
-                      : "text-gray-700 hover:text-emerald-600"
+                      ? "text-[var(--color-primary)]"
+                      : "text-gray-700 hover:text-[var(--color-primary)]"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -329,8 +286,4 @@ const Header: React.FC = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Header;
-=======
-export default Header;
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

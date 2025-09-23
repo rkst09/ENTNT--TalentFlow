@@ -53,18 +53,41 @@ const Features: React.FC = () => {
             />
           </svg>
         );
+      case "clipboard-check":
+        return (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+            />
+          </svg>
+        );
       default:
         return null;
     }
   };
 
   return (
-    <section id="features" className="py-16 lg:py-24 bg-gray-50">
+    <section
+      id="features"
+      className="flex flex-col gap-10 items-center py-16 lg:py-24 bg-gray-50"
+    >
+      <div className="flex items-center gap-5">
+  <span className="md:w-40 sm:w-25 w-12 h-[2px] bg-gradient-to-r from-white to-[var(--color-primary)]/70 rounded-full"></span>
+  <p className="border md:text-base sm:text-sm text-xs md:px-8 sm:px-6 px-4 py-2 rounded-full drop-shadow-md font-bold uppercase border-[var(--color-primary)] text-[var(--color-primary-800)]">
+          Features
+        </p>
+  <span className="md:w-40 sm:w-25 w-12 h-[2px] bg-gradient-to-r from-[var(--color-primary)]/70 to-white rounded-full"></span>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wide mb-4 block">
-            // Our Features //
-          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Streamline Your Hiring Workflow From Start To Finish
           </h2>
@@ -80,15 +103,7 @@ const Features: React.FC = () => {
               key={feature.id}
               className="text-center hover:shadow-lg transition-shadow duration-300"
             >
-              <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 ${
-                  index === 0
-                    ? "bg-emerald-600 text-white"
-                    : index === 1
-                    ? "bg-emerald-100 text-emerald-600"
-                    : "bg-gray-100 text-gray-600"
-                }`}
-              >
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-[var(--color-primary)] text-white">
                 {getFeatureIcon(feature.icon)}
               </div>
 
@@ -102,10 +117,10 @@ const Features: React.FC = () => {
 
               {/* Feature Preview Card */}
               {index === 0 && (
-                <div className="mt-6 bg-emerald-600 rounded-xl p-6 text-white">
+                <div className="mt-6 bg-[var(--color-primary)] rounded-xl p-6 text-white">
                   <div className="bg-white rounded-lg p-4 text-left">
                     <div className="flex items-center space-x-2 mb-2">
-                      <span className="text-xs bg-emerald-100 text-emerald-800 px-2 py-1 rounded">
+                      <span className="text-xs bg-[var(--color-primary-100)] text-[var(--color-primary-800)] px-2 py-1 rounded">
                         Microsoft
                       </span>
                     </div>
@@ -120,7 +135,7 @@ const Features: React.FC = () => {
                       <span className="text-xs text-gray-500">
                         5+ Positions
                       </span>
-                      <span className="text-sm font-semibold text-gray-900">
+                      <span className="md:text-sm text-xs font-semibold text-gray-900">
                         $8,000/Month
                       </span>
                     </div>
@@ -129,14 +144,14 @@ const Features: React.FC = () => {
               )}
 
               {index === 1 && (
-                <div className="mt-6 bg-emerald-100 rounded-xl p-6">
+                <div className="mt-6 bg-[var(--color-primary-100)] rounded-xl p-6">
                   <div className="space-y-3">
                     <div className="flex items-center space-x-2">
                       <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                         <span className="text-xs font-semibold">MA</span>
                       </div>
                       <div className="flex-1 text-left">
-                        <p className="text-sm font-medium text-gray-900">
+                        <p className="md:text-sm text-xs font-medium text-gray-900">
                           Maria Angelica M
                         </p>
                         <p className="text-xs text-gray-600">
@@ -145,7 +160,7 @@ const Features: React.FC = () => {
                       </div>
                       <div className="text-right">
                         <div className="flex items-center space-x-1">
-                          <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                          <span className="w-2 h-2 bg-[var(--color-primary)] rounded-full"></span>
                           <span className="text-xs text-gray-600">78%</span>
                         </div>
                       </div>
@@ -156,11 +171,43 @@ const Features: React.FC = () => {
 
               {index === 2 && (
                 <div className="mt-6 bg-gray-100 rounded-xl p-6">
-                  <div className="bg-emerald-600 rounded-lg p-4 text-white text-left">
-                    <p className="text-sm mb-2">
-                      Congrats!! you have been accepted to the next stage
-                    </p>
-                    <span className="text-xs opacity-80">13:00 ✓</span>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-lg p-4 border-l-4 border-[var(--color-primary)]">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="md:text-sm text-xs font-semibold text-gray-900">
+                          Technical Assessment
+                        </h4>
+                        <span className="text-xs bg-[var(--color-primary-100)] text-[var(--color-primary-800)] px-2 py-1 rounded">
+                          In Progress
+                        </span>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-600">JavaScript</span>
+                          <span className="text-[var(--color-primary)] font-medium">
+                            85%
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-1.5">
+                          <div
+                            className="bg-[var(--color-primary)] h-1.5 rounded-full"
+                            style={{ width: "85%" }}
+                          ></div>
+                        </div>
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-600">React</span>
+                          <span className="text-[var(--color-primary)] font-medium">
+                            92%
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-1.5">
+                          <div
+                            className="bg-[var(--color-primary)] h-1.5 rounded-full"
+                            style={{ width: "92%" }}
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

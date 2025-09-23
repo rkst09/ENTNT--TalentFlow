@@ -37,7 +37,7 @@ const CandidateProfile: React.FC<CandidateProfileProps> = () => {
     },
     { id: "offer", name: "Offer", color: "bg-green-100 text-green-800" },
     { id: "rejected", name: "Rejected", color: "bg-red-100 text-red-800" },
-    { id: "hired", name: "Hired", color: "bg-emerald-100 text-emerald-800" },
+  { id: "hired", name: "Hired", color: "bg-[var(--color-primary-100)] text-[var(--color-primary-800)]" },
   ];
 
   useEffect(() => {
@@ -155,7 +155,7 @@ const CandidateProfile: React.FC<CandidateProfileProps> = () => {
           </h1>
           <button
             onClick={() => navigate("/dashboard/candidates")}
-            className="bg-emerald-600 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-emerald-700"
+            className="bg-[var(--color-primary)] cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-[var(--color-primary-700)]"
           >
             Back
           </button>
@@ -184,7 +184,7 @@ const CandidateProfile: React.FC<CandidateProfileProps> = () => {
           </div>
           <button
             onClick={() => navigate("/dashboard/candidates")}
-            className="px-4 py-2 text-gray-700 border cursor-pointer  border-gray-300 rounded-lg hover:bg-gray-50 hover:text-emerald-500 "
+            className="px-4 py-2 text-gray-700 border cursor-pointer  border-gray-300 rounded-lg hover:bg-gray-50 hover:text-[var(--color-primary)] "
           >
             Back
           </button>
@@ -213,7 +213,7 @@ const CandidateProfile: React.FC<CandidateProfileProps> = () => {
               <select
                 value={candidate.stage}
                 onChange={(e) => handleStageChange(e.target.value)}
-                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="px-3 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)]"
               >
                 {stages.map((stage) => (
                   <option key={stage.id} value={stage.id}>
@@ -279,7 +279,7 @@ const CandidateProfile: React.FC<CandidateProfileProps> = () => {
               />
               <button
                 onClick={handleAddNote}
-                className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-sm"
+                className="px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-700)] text-sm"
               >
                 Add Note
               </button>

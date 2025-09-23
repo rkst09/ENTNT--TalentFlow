@@ -13,7 +13,7 @@ export const DeleteConfirmationModal = ({
 
   return (
     <div className="fixed inset-0 bg-white bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-emerald-200 rounded-lg p-6 max-w-md w-full mx-4">
+  <div className="bg-[var(--color-primary-100)] rounded-lg p-6 max-w-md w-full mx-4">
         <h3 className="text-lg font-semibold mb-4">Delete Job</h3>
         <p className="text-gray-600 mb-6">
           Are you sure you want to delete "{jobTitle}"? This action cannot be

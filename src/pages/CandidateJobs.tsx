@@ -96,17 +96,17 @@ const CandidateJobs: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold mb-2 text-emerald-600">
+              <h1 className="text-3xl font-bold mb-2 text-[var(--color-primary)]">
                 Available Jobs
               </h1>
-              <p className="text-emerald-600/90">
+              <p className="text-[var(--color-primary)]/90">
                 Find your next career opportunity
               </p>
             </div>
             <Button
               variant="outline"
               onClick={() => navigate("/")}
-              className="flex items-center space-x-2 hover:bg-gray-100 hover:text-emerald-600"
+              className="flex items-center space-x-2 hover:bg-gray-100 hover:text-[var(--color-primary)]"
             >
               <svg
                 className="w-4 h-4"
@@ -137,14 +137,14 @@ const CandidateJobs: React.FC = () => {
                 placeholder="Search jobs by title or tags..."
                 value={search}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
               />
             </div>
             <div className="lg:w-48">
               <select
                 value={selectedType}
                 onChange={(e) => handleTypeFilter(e.target.value)}
-                className="cursor-pointer w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="cursor-pointer w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
               >
                 {jobTypes.map((type) => (
                   <option key={type} value={type}>
@@ -206,7 +206,7 @@ const CandidateJobs: React.FC = () => {
                       variant="default"
                       size="sm"
                       onClick={() => handleApplyToJob(job.id)}
-                      className="w-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                      className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-700)] text-white"
                     >
                       Apply to Job
                     </Button>
@@ -240,7 +240,7 @@ const CandidateJobs: React.FC = () => {
                         onClick={() => setCurrentPage(i + 1)}
                         className={`px-3 py-1 cursor-pointer text-sm border rounded-md ${
                           currentPage === i + 1
-                            ? "bg-emerald-600 text-white border-emerald-600"
+                            ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)]"
                             : "border-gray-300 hover:bg-gray-50"
                         }`}
                       >

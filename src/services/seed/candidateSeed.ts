@@ -6,18 +6,13 @@ export interface Candidate {
   id: string;
   name: string;
   email: string;
-<<<<<<< HEAD
   stage: 'applied' | 'screening' | 'interview' | 'offer' | 'hired' | 'rejected';
-=======
-  stage: 'applied' | 'screen' | 'tech' | 'offer' | 'hired' | 'rejected';
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   jobId: string;
   phone: string;
   resume: string;
   notes: string[];
   appliedAt: Date;
   updatedAt: Date;
-<<<<<<< HEAD
   // Application-specific fields
   coverLetter?: string;
   experience?: string;
@@ -26,17 +21,11 @@ export interface Candidate {
 }
 
 const stages: Candidate['stage'][] = ['applied', 'screening', 'interview', 'offer', 'hired', 'rejected'];
-=======
-}
-
-const stages: Candidate['stage'][] = ['applied', 'screen', 'tech', 'offer', 'hired', 'rejected'];
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
 
 function generateCandidate(index: number, jobIds: string[]): Candidate {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
   
-<<<<<<< HEAD
   // Generate additional application-specific fields
   const techSkills = [
     'React', 'Vue', 'Angular', 'Node.js', 'Python', 'Java',
@@ -60,8 +49,6 @@ I am excited about the opportunity to contribute to your organization and would 
 Best regards,
 ${firstName} ${lastName}`;
 
-=======
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   return {
     id: `candidate-${index + 1}`,
     name: `${firstName} ${lastName}`,
@@ -74,7 +61,6 @@ ${firstName} ${lastName}`;
       () => faker.lorem.sentence()
     ),
     appliedAt: faker.date.past({ years: 1 }),
-<<<<<<< HEAD
     updatedAt: faker.date.recent({ days: 30 }),
     // Application-specific fields
     coverLetter,
@@ -90,9 +76,6 @@ ${firstName} ${lastName}`;
       'Bachelor\'s in Mathematics',
       'PhD in Computer Science'
     ])
-=======
-    updatedAt: faker.date.recent({ days: 30 })
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0
   };
 }
 
@@ -101,8 +84,4 @@ const jobIds = Array.from({ length: 25 }, (_, i) => `job-${i + 1}`);
 
 export const candidatesSeed: Candidate[] = Array.from({ length: 1000 }, 
   (_, i) => generateCandidate(i, jobIds)
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 7738358021bb403ddbeb9846b44af15dad35bff0

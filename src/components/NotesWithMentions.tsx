@@ -168,7 +168,7 @@ const NotesWithMentions: React.FC<NotesWithMentionsProps> = ({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         rows={rows}
-        className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 ${className}`}
+  className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-primary-600)] ${className}`}
       />
 
       {showSuggestions && suggestions.length > 0 && (
@@ -182,7 +182,7 @@ const NotesWithMentions: React.FC<NotesWithMentionsProps> = ({
               onClick={() => handleSuggestionClick(user)}
               className={`px-3 py-2 cursor-pointer text-sm ${
                 index === selectedSuggestion
-                  ? "bg-emerald-50 text-emerald-700"
+                  ? "bg-[var(--color-primary-100)] text-[var(--color-primary-700)]"
                   : "hover:bg-gray-50"
               }`}
             >

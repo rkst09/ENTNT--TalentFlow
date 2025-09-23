@@ -71,7 +71,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-emerald-50 bg-opacity-50 flex items-center justify-center z-50">
+  <div className="fixed inset-0 bg-[var(--color-primary-100)] bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
@@ -80,7 +80,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
             </h2>
             <button
               onClick={onClose}
-              className="text-gray-400  cursor-pointer hover:text-emerald-500"
+              className="text-gray-400  cursor-pointer hover:text-[var(--color-primary)]"
             >
               <svg
                 className="w-6 h-6"
@@ -110,7 +110,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                   onChange={(e) =>
                     setFormData({ ...formData, title: e.target.value })
                   }
-                  className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
+                  className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent ${
                     errors.title ? "border-red-300" : "border-gray-300"
                   }`}
                   placeholder="e.g., Senior React Developer"
@@ -130,7 +130,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                   onChange={(e) =>
                     setFormData({ ...formData, location: e.target.value })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
                   placeholder="e.g., San Francisco, CA"
                 />
               </div>
@@ -151,7 +151,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                         | "Contract",
                     })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
                 >
                   <option value="Full-time">Full-time</option>
                   <option value="Part-time">Part-time</option>
@@ -170,7 +170,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                   onChange={(e) =>
                     setFormData({ ...formData, salary: e.target.value })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
                   placeholder="e.g., $80K - $120K"
                 />
               </div>
@@ -187,7 +187,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                       status: e.target.value as "active" | "archived",
                     })
                   }
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
                 >
                   <option value="active">Active</option>
                   <option value="archived">Archived</option>
@@ -205,7 +205,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                   setFormData({ ...formData, description: e.target.value })
                 }
                 rows={4}
-                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent ${
+                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent ${
                   errors.description ? "border-red-300" : "border-gray-300"
                 }`}
                 placeholder="Describe the role, responsibilities, and what makes this opportunity exciting..."
@@ -227,7 +227,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                   setFormData({ ...formData, requirements: e.target.value })
                 }
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
                 placeholder="3+ years of React experience&#10;Strong TypeScript skills&#10;Experience with testing frameworks"
               />
             </div>
@@ -242,7 +242,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, tags: e.target.value })
                 }
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--color-primary-600)] focus:border-transparent"
                 placeholder="React, TypeScript, Frontend, Remote"
               />
             </div>
@@ -258,7 +258,7 @@ const JobModal: React.FC<JobModalProps> = ({ job, onClose, onSave }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 disabled:opacity-50 transition-colors duration-200"
+                className="px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[var(--color-primary-700)] disabled:opacity-50 transition-colors duration-200"
               >
                 {loading ? "Saving..." : job ? "Update Job" : "Create Job"}
               </button>
